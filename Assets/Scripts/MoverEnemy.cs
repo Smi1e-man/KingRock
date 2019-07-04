@@ -1,19 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MoverEnemy : MonoBehaviour
 {
+    [SerializeField] List<GameObject> _objects;
+
     [SerializeField] GameObject _target;
-    //[SerializeField] float _valImpulse = 10f;
-    Rigidbody rb;
+
     bool _move = true;
-    bool _move2 = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody>();
+        foreach (GameObject obj in _objects)
+        {
+            Detecter.OnHit += MoveOff;
+        }
     }
 
     // Update is called once per frame
@@ -21,32 +25,36 @@ public class MoverEnemy : MonoBehaviour
     {
         if (_move)
         {
-            transform.position = Vector3.MoveTowards(transform.position, Vector3.zero, 1f * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, Vector3.zero, 0.8f * Time.deltaTime);
         }
+    }
 
-        if (_move2)
+    /// <summary>
+    /// useGravity!!!!!!!!!!!!!
+    /// </summary>
+    /// <param name="other">Other.</param>
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("COLL");
+        MoveOff();
+        foreach (GameObject obj in _objects)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, 15f * Time.deltaTime);
-        }
-
-        if (transform.position.x > 10 || transform.position.x < -10 ||
-            transform.position.z > 10 || transform.position.z < -10 ||
-            transform.position.y < -2)
-        {
-            _move = false;
-            _move2 = false;
+            obj.GetComponent<Rigidbody>().useGravity = true;
         }
     }
 
     public void     MoveOff()
     {
+        Debug.Log("OFF");
         _move = false;
     }
 
     public void     PushEnemy()
     {
-        //rb.AddForce(Vector3.left * 150f);
-        _move2 = true;
+        foreach(GameObject obj in _objects)
+        {
+            obj.GetComponent<Rigidbody>().useGravity = true;
+            obj.GetComponent<Rigidbody>().AddForce(_target.transform.position * 1f, ForceMode.Impulse);
+        }
     }
-
 }

@@ -33,14 +33,14 @@ public class PushState : MonoBehaviour, IState
         if(_click)
         {
             PushEnemy();
-            Debug.Log("Push");
+            //Debug.Log("Push");
             _enemy = null;
             _click = false;
             _owner.ChangeState(_nextState);
         }
         else if (_enemy)
         {
-            Debug.Log("Move Enemy");
+            //Debug.Log("Move Enemy");
             MoveEnemy();
             ClickMouse();
         }
