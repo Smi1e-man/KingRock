@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Interface;
 
 public class MoverEnemy : MonoBehaviour
 {
@@ -9,15 +10,15 @@ public class MoverEnemy : MonoBehaviour
 
     [SerializeField] GameObject _target;
 
+    [SerializeField] float _speed = 1f;
+
     bool _move = true;
+    bool _coll = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        foreach (GameObject obj in _objects)
-        {
-            Detecter.OnHit += MoveOff;
-        }
+
     }
 
     // Update is called once per frame
@@ -25,28 +26,24 @@ public class MoverEnemy : MonoBehaviour
     {
         if (_move)
         {
-            transform.position = Vector3.MoveTowards(transform.position, Vector3.zero, 0.8f * Time.deltaTime);
-        }
-    }
-
-    /// <summary>
-    /// useGravity!!!!!!!!!!!!!
-    /// </summary>
-    /// <param name="other">Other.</param>
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("COLL");
-        MoveOff();
-        foreach (GameObject obj in _objects)
-        {
-            obj.GetComponent<Rigidbody>().useGravity = true;
+            transform.position = Vector3.MoveTowards(transform.position, Vector3.zero, _speed * Time.deltaTime);
         }
     }
 
     public void     MoveOff()
     {
-        Debug.Log("OFF");
+        //Debug.Log("OFF");
         _move = false;
+    }
+
+    public void     CollOff()
+    {
+        _coll = false;
+    }
+
+    public bool     GetColl()
+    {
+        return _coll;
     }
 
     public void     PushEnemy()

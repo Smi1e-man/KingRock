@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{1AC8ABBC-5DD5-CDB7-7AB5-8D91D2320C9A}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EventManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SuperSkill.cs">
     <Files>
-      <File FileName="Assets/Scripts/MoverEnemy.cs" Line="43" Column="10" />
+      <File FileName="Assets/Scripts/MoverEnemy.cs" Line="39" Column="23" />
       <File FileName="Assets/Scripts/State/PushState.cs" Line="36" Column="33" />
-      <File FileName="Assets/Scripts/State/PullState.cs" Line="56" Column="57" />
+      <File FileName="Assets/Scripts/State/PullState.cs" Line="56" Column="35" />
       <File FileName="Assets/Scripts/Shooter.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Clicker.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EnderGame.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Detecter.cs" Line="7" Column="1" />
-      <File FileName="Assets/Scripts/EventManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EnderGame.cs" Line="23" Column="74" />
+      <File FileName="Assets/Scripts/Detecter.cs" Line="11" Column="74" />
+      <File FileName="Assets/Scripts/SuperSkill.cs" Line="8" Column="33" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,7 +17,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="State" expanded="True" />
-                <Node name="EventManager.cs" selected="True" />
+                <Node name="SuperSkill.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -27,7 +27,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7dca842f-6058-41bf-9374-59e8856cfe5b" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a2f8bcff-3e45-48e0-9d87-14f7c26a10bb" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

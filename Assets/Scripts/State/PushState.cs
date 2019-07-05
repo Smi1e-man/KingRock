@@ -64,8 +64,10 @@ public class PushState : MonoBehaviour, IState
     {
         Rigidbody rb = _enemy.GetComponent<Rigidbody>();
         _enemy.parent = null;
-        // Добавить код для push enemy
+        //код для push enemy
         _enemy.GetComponent<MoverEnemy>().PushEnemy();
+        //код для смены вращения
+        _owner.GetComponent<Shooter>().ChangeAxisRotate();
     }
 
 }

@@ -70,7 +70,6 @@
     <Compile Include="Assets\Scripts\Clicker.cs" />
     <Compile Include="Assets\Scripts\Detecter.cs" />
     <Compile Include="Assets\Scripts\EnderGame.cs" />
-    <Compile Include="Assets\Scripts\EventManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Generator.cs" />
     <Compile Include="Assets\Scripts\Intarface\IState.cs" />
@@ -78,6 +77,7 @@
     <Compile Include="Assets\Scripts\Shooter.cs" />
     <Compile Include="Assets\Scripts\State\PullState.cs" />
     <Compile Include="Assets\Scripts\State\PushState.cs" />
+    <Compile Include="Assets\Scripts\SuperSkill.cs" />
     <None Include="Assets\ProCore\ProBuilder\Shader\pb_TransparentOverlay.shader" />
     <None Include="Assets\ProCore\ProBuilder\API Examples\Icosphere FFT\README.txt" />
     <None Include="Assets\LowPolyWater_Pack\LowPoly Island\Credits.txt" />

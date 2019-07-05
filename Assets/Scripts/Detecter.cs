@@ -4,24 +4,21 @@ using UnityEngine;
 
 public class Detecter : MonoBehaviour
 {
-    public delegate void HitEnter();
-    public static event HitEnter OnHit;
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    Debug.Log("COLL");
-    //    if (OnHit != null)
-    //    {
-    //        OnHit();
-    //    }
-    //}
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("COLL");
-        if (OnHit != null)
+        transform.parent.gameObject.GetComponent<MoverEnemy>().MoveOff();
+        transform.parent.gameObject.GetComponent<MoverEnemy>().CollOff();
+
+        for (int i = 0; i < transform.root.childCount; i++)
         {
-            OnHit();
+            Transform child = transform.root.GetChild(i);
+            child.gameObject.GetComponent<Detecter>().GravityOn();
         }
+    }
+
+    public void GravityOn()
+    {
+        GetComponent<Rigidbody>().useGravity = true;
     }
 }

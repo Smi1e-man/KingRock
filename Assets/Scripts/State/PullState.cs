@@ -56,6 +56,12 @@ public class PullState : MonoBehaviour, IState
                 _enemy = hit.transform.parent.transform;
                 _enemy.parent = _transform;
                 _enemy.GetComponent<MoverEnemy>().MoveOff(); //new code
+                if (_enemy.GetComponent<MoverEnemy>().GetColl() == false) //Ростик помоги, когда попадаем на уже разбитый объект он цепляется, а должен не контачить
+                {
+                    _enemy.parent = null;
+                    _enemy = null;
+
+                }
             }
         }
 	}

@@ -21,7 +21,6 @@ public class EnderGame : MonoBehaviour
     {
         Debug.Log("END");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        other.tag = "bad";
     }
 
 }

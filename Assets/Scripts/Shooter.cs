@@ -16,6 +16,8 @@ public class Shooter : MonoBehaviour
     private Transform _transform;
     private IState _state;
 
+    Vector3 _axisRotate = Vector3.up;
+
     void Start()
     {
         _pullState.InitState(_pullSpeed, _distance, this, _pushState);
@@ -34,7 +36,17 @@ public class Shooter : MonoBehaviour
     private void Rotate()
     {
         Vector3 axis = _transform.position;
-        _transform.RotateAround(axis, Vector3.up, _rotateSpeed * Time.deltaTime);
+        _transform.RotateAround(axis, _axisRotate, _rotateSpeed * Time.deltaTime);
+    }
+
+    public void ChangeAxisRotate()
+    {
+        if (_axisRotate == Vector3.up)
+        {
+            _axisRotate = Vector3.down;
+        }
+        else
+            _axisRotate = Vector3.up;
     }
 
     public void ChangeState(IState state)
