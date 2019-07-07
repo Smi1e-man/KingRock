@@ -4,82 +4,70 @@ using UnityEngine;
 
 public class Generator : MonoBehaviour
 {
-    public GameObject enemy_1;
-    public GameObject enemy_2;
-    public GameObject enemy_3;
-    public GameObject enemy_4;
+    //protected
+    [SerializeField] List<GameObject> _enemies;
 
-    GameObject pref;
+    [SerializeField] float _radiusSpawn = 10f;
+    [SerializeField] float _heightSpawn = 0f;  
+    [SerializeField] float _deltaTimeSpawn = 1f;
 
-    public float radius;
+    [SerializeField] float _deltaAngleSpawn = 20f;
 
-    public float SpawnDeltaTime;
+    //private
+    float   _nextTime;
 
-    float deltaAngle = 20f;
+    float   _angle;
+    float   _old_angle;
 
-    float nextTime;
+    GameObject  _pref;
 
-	float _x;
-    float _z;
-
-    float angle;
-    float old_angle;
-
-    Vector3 direction;
-    Quaternion lookRotate;
+    float   _x;
+    float   _z;
+    //Vector3 _direction;
+    //Quaternion _lookRotate;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        angle = Random.Range(0f, 360f);
-        old_angle = angle;
+        _angle = Random.Range(0f, 360f);
+        _old_angle = _angle;
 
-        SpawnEnemy(angle, RandEnemy());
-        nextTime = Time.time + SpawnDeltaTime;
+        SpawnEnemy(_angle, RandEnemy());
+        _nextTime = Time.time + _deltaTimeSpawn;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > nextTime)
+        if (Time.time > _nextTime)
         {
-			angle = Random.Range(0f, 360f);
-            if ((angle > (old_angle + deltaAngle)) || (angle < (old_angle - deltaAngle)))
+			_angle = Random.Range(0f, 360f);
+            if ((_angle > (_old_angle + _deltaAngleSpawn)) || (_angle < (_old_angle - _deltaAngleSpawn)))
             {
-                SpawnEnemy(angle, RandEnemy());
-                old_angle = angle;
+                SpawnEnemy(_angle, RandEnemy());
+                _old_angle = _angle;
             }
-            nextTime = Time.time + SpawnDeltaTime;
+            _nextTime = Time.time + _deltaTimeSpawn;
         }
     }
 
     void    SpawnEnemy(float angle, GameObject enemy)
     {
-		
-		_x = radius * Mathf.Cos(angle);
-		_z = radius * Mathf.Sin(angle);
-		
-		pref = Instantiate(enemy, new Vector3(_x, 0f, _z), Quaternion.identity);
-		
-		direction = (Vector3.zero - pref.transform.position).normalized;
-		lookRotate = Quaternion.LookRotation(direction);
-		
-		pref.transform.rotation = lookRotate;
+		_x = _radiusSpawn * Mathf.Cos(angle);
+        _z = _radiusSpawn * Mathf.Sin(angle);
+
+        _pref = Instantiate(enemy, new Vector3(_x, _heightSpawn, _z), Quaternion.Euler(-90f, 0f, 0f));
+        //_direction = (Vector3.zero - _pref.transform.position).normalized;
+        //_lookRotate = Quaternion.LookRotation(_direction);
+
+        //_pref.transform.rotation = _lookRotate;
+
     }
 
     GameObject   RandEnemy()
     {
-        float nb = Random.Range(0, 4);
-
-        if (nb == 0)
-            return (enemy_1);
-        else if (nb == 1)
-            return (enemy_2);
-        else if (nb == 2)
-            return (enemy_3);
-        else
-            return (enemy_4);
+        return (_enemies[(int)Random.Range(0f, _enemies.Count)]);
 
     }
 
