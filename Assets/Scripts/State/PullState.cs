@@ -31,7 +31,10 @@ public class PullState : MonoBehaviour, IState
     public void UpdateState()
     {
         if (!Input.GetMouseButton(0))
+        {
             _active = true;
+            _moveIn = false;
+        }
         if (_done)
         {
             _nextState.SetEnemy(_enemy);
@@ -51,7 +54,7 @@ public class PullState : MonoBehaviour, IState
 
     public void OnStay(Collider other)
     {
-        Debug.Log("TRIGGER");
+        //Debug.Log("TRIGGER");
         if (_moveIn && other)
         {
             _moveIn = false;

@@ -46,7 +46,6 @@ public class PushState : MonoBehaviour, IState
         }
     }
 
-
     private void ClickMouse()
     {
         if (Input.GetMouseButton(0))
@@ -57,7 +56,7 @@ public class PushState : MonoBehaviour, IState
 
     public void MoveEnemy()
 	{
-		_enemy.position = Vector3.MoveTowards(_enemy.position, _transform.TransformDirection(Vector3.forward * _distance), _speed * Time.deltaTime);
+	    _enemy.position = Vector3.MoveTowards(_enemy.position, _transform.TransformDirection(Vector3.forward * _distance), _speed * Time.deltaTime);
 	}
 
     private void PushEnemy()
@@ -69,5 +68,4 @@ public class PushState : MonoBehaviour, IState
         //код для смены вращения
         _owner.GetComponent<Shooter>().ChangeAxisRotate();
     }
-
 }

@@ -1,15 +1,16 @@
 ﻿<Properties StartupConfiguration="{1AC8ABBC-5DD5-CDB7-7AB5-8D91D2320C9A}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Shooter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnderGame.cs">
     <Files>
-      <File FileName="Assets/Scripts/Generator.cs" Line="70" Column="66" />
-      <File FileName="Assets/Scripts/MoverEnemy.cs" Line="51" Column="29" />
+      <File FileName="Assets/Scripts/Generator.cs" Line="53" Column="18" />
+      <File FileName="Assets/Scripts/MoverEnemy.cs" Line="18" Column="29" />
       <File FileName="Assets/Scripts/State/PushState.cs" Line="14" Column="34" />
-      <File FileName="Assets/Scripts/State/PullState.cs" Line="69" Column="1" />
+      <File FileName="Assets/Scripts/State/PullState.cs" Line="64" Column="38" />
       <File FileName="Assets/Scripts/SuperSkill.cs" Line="55" Column="6" />
-      <File FileName="Assets/Scripts/Test.cs" Line="14" Column="38" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="7" Column="41" />
-      <File FileName="Assets/Scripts/Detecter.cs" Line="11" Column="74" />
-      <File FileName="Assets/Scripts/Shooter.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Test.cs" Line="11" Column="27" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="8" Column="44" />
+      <File FileName="Assets/Scripts/Detecter.cs" Line="24" Column="74" />
+      <File FileName="Assets/Scripts/Shooter.cs" Line="23" Column="71" />
+      <File FileName="Assets/Scripts/EnderGame.cs" Line="11" Column="9" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,20 +19,17 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="State" expanded="True" />
-                <Node name="Shooter.cs" selected="True" />
+                <Node name="EnderGame.cs" selected="True" />
               </Node>
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8c899284-d8ab-4437-bcde-2fc641255e55" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fd395c7f-d937-40c6-a160-dfc473ef67d0" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

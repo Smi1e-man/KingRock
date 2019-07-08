@@ -15,7 +15,7 @@ public class MoverEnemy : MonoBehaviour
     [SerializeField] float _pushImpulse = 1f;
 
     //private
-    float _speedMoveUp = 40f;
+    float _speedMoveUp = 5f;
     bool _moveCentre = false;
     bool _moveUp = true;
     bool _coll = true;
@@ -26,11 +26,6 @@ public class MoverEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //_direction = (Vector3.zero - transform.position).normalized;
-        //_lookRotate = Quaternion.LookRotation(_direction);
-
-        //transform.rotation = _lookRotate;
-
 
     }
 
@@ -48,7 +43,7 @@ public class MoverEnemy : MonoBehaviour
 
         if (transform.position.y >= 0.5f && _moveUp)
         {
-            Debug.Log("UP");
+            //Debug.Log("UP");
             _moveUp = false;
             _direction = (Vector3.zero - transform.position).normalized;
             _lookRotate = Quaternion.LookRotation(_direction);
@@ -84,6 +79,9 @@ public class MoverEnemy : MonoBehaviour
         {
             obj.GetComponent<Rigidbody>().useGravity = true;
             obj.GetComponent<Rigidbody>().AddForce(_target.transform.position * _pushImpulse, ForceMode.Impulse);
+            if (obj.GetComponent<Detecter>())
+                obj.GetComponent<Detecter>().DellEnemy();
         }
     }
+
 }

@@ -44,7 +44,7 @@ public class SuperSkill : MonoBehaviour
             }
             else
             {
-                Debug.Log("IMPULSE");
+                //Debug.Log("IMPULSE");
                 _block.GetComponent<Rigidbody>().AddForce(_target.transform.position * 0.3f, ForceMode.Impulse);
                 _scale = false;
                 _block.transform.localScale = _startScale;

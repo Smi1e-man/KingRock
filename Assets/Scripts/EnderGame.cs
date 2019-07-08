@@ -19,8 +19,9 @@ public class EnderGame : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("END");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //Debug.Log("END");
+        if (other.gameObject.GetComponent<MeshRenderer>().material.color.a > 0.9f)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }

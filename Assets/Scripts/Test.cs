@@ -8,7 +8,7 @@ public class Test : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("STAY");
+        //Debug.Log("STAY");
         if (other)
         {
             _pullState.OnStay(other);
