@@ -41,7 +41,7 @@ public class Generator : MonoBehaviour
     void    SpawnEnemy(GameObject enemy, GameObject spawnPlace)
     {
         _pref = Instantiate(enemy, spawnPlace.transform.position, Quaternion.identity);
-        _direction = (Vector3.zero - _pref.transform.position).normalized;
+        _direction = (GameManager.g_targetLookRotation - _pref.transform.position).normalized;
         _lookRotate = Quaternion.LookRotation(_direction);
 
         _pref.transform.rotation = _lookRotate;

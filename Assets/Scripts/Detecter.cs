@@ -24,7 +24,12 @@ public class Detecter : MonoBehaviour
             {
                 GetComponent<MeshRenderer>().material.color *= _deltaAlpha;
                 if (GetComponent<MeshRenderer>().material.color.a < 0.1f)
+                {
                     Destroy(transform.parent.gameObject);
+                    GameManager.g_Score += 100;
+                    Debug.Log(GameManager.g_Score);
+                }
+
                 //Debug.Log(GetComponent<MeshRenderer>().material.color.a);
             }
             _nextTime = Time.time + _timeStep;
@@ -47,13 +52,13 @@ public class Detecter : MonoBehaviour
                         Transform child = transform.parent.GetChild(i);
                         if (child.GetComponent<Detecter>())
                         {
-                            Debug.Log("NO");
+                            //Debug.Log("NO");
                             child.gameObject.GetComponent<Detecter>().GravityOn();
                             child.gameObject.GetComponent<Detecter>().DellEnemy();
                         }
                         else if (child.parent.GetComponent<Shooter>())
                         {
-                            Debug.Log("123");
+                            //Debug.Log("123");
                         }
                     }
                 }

@@ -67,7 +67,9 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Generator.cs" />
     <Compile Include="Assets\Scripts\Intarface\IState.cs" />
+    <Compile Include="Assets\Scripts\LevelUp.cs" />
     <Compile Include="Assets\Scripts\MoverEnemy.cs" />
+    <Compile Include="Assets\Scripts\Scorer.cs" />
     <Compile Include="Assets\Scripts\Shooter.cs" />
     <Compile Include="Assets\Scripts\State\PullState.cs" />
     <Compile Include="Assets\Scripts\State\PushState.cs" />

@@ -15,7 +15,7 @@ public class MoverEnemy : MonoBehaviour
     [SerializeField] float _pushImpulse = 1f;
 
     //private
-    float _speedMoveUp = 5f;
+    float _speedMoveUp = 10f;
     bool _moveCentre = false;
     bool _moveUp = true;
     bool _coll = true;
@@ -34,18 +34,18 @@ public class MoverEnemy : MonoBehaviour
     {
         if (_moveCentre)
         {
-            transform.position = Vector3.MoveTowards(transform.position, Vector3.zero, _speedMoveCentre * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, GameManager.g_targetLookRotation, _speedMoveCentre * Time.deltaTime);
         }
         if (_moveUp)
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y + 100f, transform.position.z), _speedMoveUp * Time.deltaTime);
         }
 
-        if (transform.position.y >= 0.5f && _moveUp)
+        if (transform.position.y >= GameManager.g_heightArena && _moveUp)
         {
             //Debug.Log("UP");
             _moveUp = false;
-            _direction = (Vector3.zero - transform.position).normalized;
+            _direction = (GameManager.g_targetLookRotation - transform.position).normalized;
             _lookRotate = Quaternion.LookRotation(_direction);
 
             transform.rotation = _lookRotate;

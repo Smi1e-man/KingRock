@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    //static public bool g_MoveIn = false;
+    static public float g_Score = 0;
+    static public int g_level = 1;
+    static public float g_heightArena = 0.1f;
+    static public Vector3 g_targetLookRotation = Vector3.zero;
     //static public bool g_detected = true;
 }
