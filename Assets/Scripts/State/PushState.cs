@@ -30,7 +30,7 @@ public class PushState : MonoBehaviour, IState
 
     public void UpdateState()
     {
-        if(_click)
+        if (_click)
         {
             PushEnemy();
             //Debug.Log("Push");
@@ -44,6 +44,13 @@ public class PushState : MonoBehaviour, IState
             MoveEnemy();
             ClickMouse();
         }
+        else
+        {
+            _enemy = null;
+            _click = false;
+            _owner.ChangeState(_nextState);
+        }
+
     }
 
     private void ClickMouse()
@@ -56,11 +63,12 @@ public class PushState : MonoBehaviour, IState
 
     public void MoveEnemy()
 	{
-	    _enemy.position = Vector3.MoveTowards(_enemy.position, _transform.TransformDirection(Vector3.forward * _distance), _speed * Time.deltaTime);
+	    _enemy.position = Vector3.MoveTowards(_enemy.position, _transform.TransformDirection(new Vector3(0f, 4.5f + GameManager.g_deltaDistMoveEnemy, 1f * _distance)), _speed * Time.deltaTime);
 	}
 
     private void PushEnemy()
     {
+        Debug.Log("???PUSH");
         Rigidbody rb = _enemy.GetComponent<Rigidbody>();
         _enemy.parent = null;
         //код для push enemy

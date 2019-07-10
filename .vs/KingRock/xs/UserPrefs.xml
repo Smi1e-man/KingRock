@@ -1,18 +1,19 @@
 ﻿<Properties StartupConfiguration="{1AC8ABBC-5DD5-CDB7-7AB5-8D91D2320C9A}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelUp.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MoverCamera.cs">
     <Files>
-      <File FileName="Assets/Scripts/Generator.cs" Line="53" Column="18" />
-      <File FileName="Assets/Scripts/MoverEnemy.cs" Line="18" Column="30" />
-      <File FileName="Assets/Scripts/State/PushState.cs" Line="55" Column="6" />
-      <File FileName="Assets/Scripts/State/PullState.cs" Line="36" Column="29" />
+      <File FileName="Assets/Scripts/Generator.cs" Line="44" Column="56" />
+      <File FileName="Assets/Scripts/MoverEnemy.cs" Line="42" Column="58" />
+      <File FileName="Assets/Scripts/State/PushState.cs" Line="66" Column="146" />
+      <File FileName="Assets/Scripts/State/PullState.cs" Line="107" Column="136" />
       <File FileName="Assets/Scripts/SuperSkill.cs" Line="57" Column="1" />
       <File FileName="Assets/Scripts/Test.cs" Line="11" Column="29" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="7" Column="25" />
-      <File FileName="Assets/Scripts/Detecter.cs" Line="30" Column="52" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="14" Column="47" />
+      <File FileName="Assets/Scripts/Detecter.cs" Line="28" Column="25" />
       <File FileName="Assets/Scripts/Shooter.cs" Line="32" Column="30" />
-      <File FileName="Assets/Scripts/EnderGame.cs" Line="22" Column="28" />
-      <File FileName="Assets/Scripts/Scorer.cs" Line="25" Column="22" />
-      <File FileName="Assets/Scripts/LevelUp.cs" Line="7" Column="22" />
+      <File FileName="Assets/Scripts/EnderGame.cs" Line="25" Column="70" />
+      <File FileName="Assets/Scripts/Scorer.cs" Line="29" Column="45" />
+      <File FileName="Assets/Scripts/LevelUp.cs" Line="97" Column="54" />
+      <File FileName="Assets/Scripts/MoverCamera.cs" Line="7" Column="20" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,7 +22,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="State" expanded="True" />
-                <Node name="LevelUp.cs" selected="True" />
+                <Node name="MoverCamera.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -31,7 +32,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="12377989-8206-4a2a-88f5-b76e4ee1a1fc" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c18f6e28-ef81-42c5-a22c-445f392546bb" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

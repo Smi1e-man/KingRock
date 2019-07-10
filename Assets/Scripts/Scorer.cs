@@ -5,17 +5,15 @@ using UnityEngine.UI;
 
 public class Scorer : MonoBehaviour
 {
-
     [SerializeField] Slider     _slider;
     [SerializeField] Text       _textScore;
     [SerializeField] Text       _textLVL;
 
-    float _maxValue = 5000;
-
     // Start is called before the first frame update
     void Start()
     {
-        _slider.maxValue = _maxValue;
+        _slider.maxValue = GameManager.g_maxValueScore;
+        _textLVL.text = "LeVeL " + GameManager.g_level;
     }
 
     // Update is called once per frame
@@ -23,14 +21,31 @@ public class Scorer : MonoBehaviour
     {
         _slider.value = GameManager.g_Score;
         _textScore.text = GameManager.g_Score.ToString();
-        _textLVL.text = "LeVeL " + GameManager.g_level;
+        if (GameManager.g_Active)
+            _textLVL.text = "LeVeL " + GameManager.g_level;
 
         //level up
-        if (GameManager.g_Score >= _maxValue)
+        if (GameManager.g_Score >= GameManager.g_maxValueScore)
         {
+            GameManager.g_oldScore = GameManager.g_Score;
+
             GameManager.g_level += 1;
-            _maxValue += 10000;
-            _slider.maxValue = _maxValue;
+            GameManager.g_oldlevel = GameManager.g_level;
+            Debug.Log("OldLEVEL = " + GameManager.g_oldlevel);
+
+            GameManager.g_maxValueScore += 1000;
+        }
+
+        if (GameManager.g_Active)
+        {
+            Debug.Log("LEVEL UP2");
+
+            GameManager.g_heightArena += 4f;
+            //GameManager.g_oldheightArena = GameManager.g_heightArena;
+
+            _slider.maxValue = GameManager.g_maxValueScore;
+
+            GameManager.g_Active = false;
         }
     }
 }

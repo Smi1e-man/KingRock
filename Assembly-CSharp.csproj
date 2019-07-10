@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Generator.cs" />
     <Compile Include="Assets\Scripts\Intarface\IState.cs" />
     <Compile Include="Assets\Scripts\LevelUp.cs" />
+    <Compile Include="Assets\Scripts\MoverCamera.cs" />
     <Compile Include="Assets\Scripts\MoverEnemy.cs" />
     <Compile Include="Assets\Scripts\Scorer.cs" />
     <Compile Include="Assets\Scripts\Shooter.cs" />

@@ -39,6 +39,7 @@ public class MoverEnemy : MonoBehaviour
         if (_moveUp)
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y + 100f, transform.position.z), _speedMoveUp * Time.deltaTime);
+            //Debug.Log("POS = " + transform.position.y);
         }
 
         if (transform.position.y >= GameManager.g_heightArena && _moveUp)
@@ -78,10 +79,9 @@ public class MoverEnemy : MonoBehaviour
         foreach(GameObject obj in _objects)
         {
             obj.GetComponent<Rigidbody>().useGravity = true;
-            obj.GetComponent<Rigidbody>().AddForce(_target.transform.position * _pushImpulse, ForceMode.Impulse);
+            obj.GetComponent<Rigidbody>().AddForce(new Vector3(_target.transform.position.x, 0.1f + GameManager.g_deltaDistPushEnemy, _target.transform.position.z) * _pushImpulse, ForceMode.Impulse);
             if (obj.GetComponent<Detecter>())
                 obj.GetComponent<Detecter>().DellEnemy();
         }
     }
-
 }

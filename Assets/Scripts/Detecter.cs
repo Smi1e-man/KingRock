@@ -26,8 +26,9 @@ public class Detecter : MonoBehaviour
                 if (GetComponent<MeshRenderer>().material.color.a < 0.1f)
                 {
                     Destroy(transform.parent.gameObject);
-                    GameManager.g_Score += 100;
-                    Debug.Log(GameManager.g_Score);
+                    if (GameManager.g_activeScore)
+                        GameManager.g_Score += 100;
+                    //Debug.Log(GameManager.g_Score);
                 }
 
                 //Debug.Log(GetComponent<MeshRenderer>().material.color.a);
