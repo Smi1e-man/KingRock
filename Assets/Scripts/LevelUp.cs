@@ -105,6 +105,8 @@ public class LevelUp : MonoBehaviour
                     _oldPref = _pref;
 
                     _backLevel = GameManager.g_level;
+
+                    GameManager.g_ScoreView = true;
                     GameManager.g_Active = true;
                     _spawnActive = true;
                     _active = true;

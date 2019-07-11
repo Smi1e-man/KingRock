@@ -22,5 +22,8 @@ public class GameManager : MonoBehaviour
 
     static public bool g_Active = false;
 
+    static public bool g_ScoreView = true;
+
+
     //static public bool g_detected = true;
 }

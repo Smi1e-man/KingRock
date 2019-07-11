@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{1AC8ABBC-5DD5-CDB7-7AB5-8D91D2320C9A}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MoverCamera.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
     <Files>
       <File FileName="Assets/Scripts/Generator.cs" Line="44" Column="56" />
       <File FileName="Assets/Scripts/MoverEnemy.cs" Line="42" Column="58" />
@@ -7,13 +7,13 @@
       <File FileName="Assets/Scripts/State/PullState.cs" Line="107" Column="136" />
       <File FileName="Assets/Scripts/SuperSkill.cs" Line="57" Column="1" />
       <File FileName="Assets/Scripts/Test.cs" Line="11" Column="29" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="14" Column="47" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="15" Column="51" />
       <File FileName="Assets/Scripts/Detecter.cs" Line="28" Column="25" />
       <File FileName="Assets/Scripts/Shooter.cs" Line="32" Column="30" />
-      <File FileName="Assets/Scripts/EnderGame.cs" Line="25" Column="70" />
-      <File FileName="Assets/Scripts/Scorer.cs" Line="29" Column="45" />
-      <File FileName="Assets/Scripts/LevelUp.cs" Line="97" Column="54" />
-      <File FileName="Assets/Scripts/MoverCamera.cs" Line="7" Column="20" />
+      <File FileName="Assets/Scripts/EnderGame.cs" Line="27" Column="51" />
+      <File FileName="Assets/Scripts/Scorer.cs" Line="43" Column="71" />
+      <File FileName="Assets/Scripts/LevelUp.cs" Line="109" Column="52" />
+      <File FileName="Assets/Scripts/MoverCamera.cs" Line="19" Column="67" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,8 +21,7 @@
           <Node name="KingRock" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="State" expanded="True" />
-                <Node name="MoverCamera.cs" selected="True" />
+                <Node name="GameManager.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -32,7 +31,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c18f6e28-ef81-42c5-a22c-445f392546bb" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2dc47287-4097-446f-a618-7a3a0b8b568d" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
