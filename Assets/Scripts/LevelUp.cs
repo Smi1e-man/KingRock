@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LevelUp : MonoBehaviour
 {
+    [SerializeField] Gradient _gradient;
+
     [SerializeField] GameObject _place;
     [SerializeField] GameObject _generator;
     [SerializeField] GameObject _spawnPlaces;
@@ -34,6 +36,8 @@ public class LevelUp : MonoBehaviour
 
     float _i;
 
+    float _colorIndex = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +58,7 @@ public class LevelUp : MonoBehaviour
     void Update()
     {
         Debug.Log("LVL = " + GameManager.g_level);
-        //перед запуском нового уровня - зачистка & переопределение переменных & 
+        //перед запуском нового уровня - зачистка & переопределение переменных
         if (_backLevel < GameManager.g_level)
         {
             if (_spawnActive)
@@ -72,8 +76,6 @@ public class LevelUp : MonoBehaviour
             }
             if (_pref.transform.localScale.x < (_scaleCheak + 20f))
             {
-                //Debug.Log("LVL2" + _pref.transform.localScale);
-                //Debug.Log(_spawnDelta);
                 _pref.transform.localScale += _deltaScaleClean;
             }
             else
@@ -94,14 +96,18 @@ public class LevelUp : MonoBehaviour
                     _distCheak += 4f;
 
                     GameManager.g_deltaDistMoveEnemy += 4f;
-                    GameManager.g_deltaDistPushEnemy += 0.1f;
+                    //GameManager.g_deltaDistPushEnemy += 0.1f;
 
                     _pref = SpawnPLace();
                     _pref.transform.localScale = new Vector3(20f, 20f, 20f);
                     _pref.transform.localEulerAngles = new Vector3(-90f, 0f, 0f);
                     _pref.GetComponent<MeshRenderer>().material.color = Color.white;
 
-                    _oldPref.GetComponent<MeshRenderer>().material.color = RandColor();
+                    _oldPref.GetComponent<MeshRenderer>().material.color = _gradient.Evaluate(_colorIndex);
+                    if (_colorIndex + 0.05f >= 1)
+                        _colorIndex = 0f;
+                    else
+                        _colorIndex += 0.05f;
                     _oldPref = _pref;
 
                     _backLevel = GameManager.g_level;
@@ -134,6 +140,7 @@ public class LevelUp : MonoBehaviour
                     //запуск нового уровня(противников)
                     _active = false;
                     GameManager.g_targetLookRotation = _targetLookRotation.transform.position;
+                    _spawnPlaces.transform.position += new Vector3(0f, 3f, 0f);
                     _generator.SetActive(true);
                     GameManager.g_activeScore = true;
                 }
@@ -143,21 +150,6 @@ public class LevelUp : MonoBehaviour
                 }
             }
         }
-    }
-
-    Color   RandColor()
-    {
-        _i = Random.Range(0f, 6f);
-        if (_i < 1f)
-            return (Color.blue);
-        else if (_i < 2f)
-            return (Color.cyan);
-        else if (_i < 3f)
-            return (Color.magenta);
-        else if (_i < 4f)
-            return (Color.yellow);
-        else
-            return (Color.red);
     }
 
     GameObject    SpawnPLace()

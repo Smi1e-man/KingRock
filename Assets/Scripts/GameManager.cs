@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameAnalyticsSDK;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,6 +25,33 @@ public class GameManager : MonoBehaviour
 
     static public bool g_ScoreView = true;
 
+    static public bool g_Game = true;
 
-    //static public bool g_detected = true;
+    private void Start()
+    {
+        GameAnalytics.Initialize();
+        Application.targetFrameRate = 60;
+        g_level = PlayerPrefs.GetInt("lvl", 1);
+        g_oldlevel = PlayerPrefs.GetInt("oldlvl", 1);
+        g_Score = PlayerPrefs.GetFloat("score", 0.0f);
+        g_oldScore = PlayerPrefs.GetFloat("oldscore", 0.0f);
+        g_maxValueScore = PlayerPrefs.GetFloat("maxvalscore", 1000f);
+        //g_heightArena = PlayerPrefs.GetFloat("harea", 0f);
+        //g_deltaDistMoveEnemy = PlayerPrefs.GetFloat("delmoven", 0.0f);
+        g_deltaDistPushEnemy = PlayerPrefs.GetFloat("delpushen", 0.0f);
+    }
+
+    private void Update()
+    {
+        PlayerPrefs.SetInt("lvl", g_level);
+        PlayerPrefs.SetInt("oldlvl", g_oldlevel);
+        PlayerPrefs.SetFloat("score", g_Score);
+        PlayerPrefs.SetFloat("oldscore", g_oldScore);
+        PlayerPrefs.SetFloat("maxvalscore", g_maxValueScore);
+        //PlayerPrefs.SetFloat("harea", g_heightArena);
+        //PlayerPrefs.SetFloat("delmoven", g_deltaDistMoveEnemy);
+        PlayerPrefs.SetFloat("delpushen", g_deltaDistPushEnemy);
+        Debug.Log(PlayerPrefs.GetInt("lvl"));
+        PlayerPrefs.Save();
+    }
 }
